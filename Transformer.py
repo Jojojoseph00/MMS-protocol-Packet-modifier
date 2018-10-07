@@ -1,35 +1,24 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) 2018 Mokhtari Youssef El Moukhtar @SUTD
 #
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# This script accesses the packet payload and modifies it whenset up as a MITM
 #
 # Please note that original software stems from Francisco Furtado's software (francisco_dos@sutd.edu.sg)
-from telnetlib import IP
+# UNEDITED SCRIPT
 
 from netfilterqueue import NetfilterQueue
 import os, sys, argparse, struct, binascii
 import datetime, ctypes, random
 from time import sleep
-from time import time as ts
-import cip, enip_tcp
 
+from time import time as ts
+
+from scapy import all as scapy_all
+from scapy.layers.inet import IP
+from scapy.layers.inet import UDP
+from cip_4c import SWAT_P1_ALL, SWAT_MV, SWAT_LIT, SWAT_AIT, SWAT_FIT, SWAT_P
+from scapy.all import *
+import cip, enip_tcp
 
 value = []
 mutation = []
