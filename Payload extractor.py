@@ -39,7 +39,7 @@ while (True):
     pkt = pkts.read_packet()
     # '172.16.1.11'
     if pkt is None or count > 2:
-                # This means 
+                # This means
         break
     else:
 
