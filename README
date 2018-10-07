@@ -1,0 +1,6 @@
+This code is used for MMS MITM attack
+
+The program functions when my Kali Linux is set up within the target network subnet.
+All packets going between my two targets transit through me. The program intercepts the packet and makes a change to the payload when the structure of the packet is known.
+
+Mokhtari Youssef @SUTD
