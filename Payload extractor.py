@@ -48,7 +48,8 @@ while (True):
             print("\n\n//=================START OF PACKET=================// \n\n")
             pkt.show()
             hexadecimal = hexdump1(pkt[Raw])
-            Payload_List = []
+            list(hexadecimal)
+            print(hexadecimal[3]) # Can access an individual element from a list
 
 
             # Here create a list for this packet, by taking each num as an item
