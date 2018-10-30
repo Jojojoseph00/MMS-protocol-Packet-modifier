@@ -38,7 +38,7 @@ def hexdump1(x, dump=False):
 while (True):
     pkt = pkts.read_packet()
     # '172.16.1.11'
-    if pkt is None or count > 2:
+    if pkt is None or count > 5:
                 # This means
         break
     else:
@@ -48,6 +48,10 @@ while (True):
             print("\n\n//=================START OF PACKET=================// \n\n")
             pkt.show()
             hexadecimal = hexdump1(pkt[Raw])
+            Payload_List = []
+
+
+            # Here create a list for this packet, by taking each num as an item
             print(type(hexadecimal))
             temp = int(hexadecimal, 16)
             print("\n\----Below is the Hexadecimal payload:")
@@ -57,6 +61,13 @@ while (True):
             print("\n//==================END OF PACKET==================// \n\n")
             count += 1
             pkt[Raw] = '111111'
+
+            # insert HMI here
+
+            # Add def to turn payload into a list, manually count till the first
+            # Relevant information, save it as a variable in another list,
+            # convert that variable to float and print
+
 
 pkts.close()
 
