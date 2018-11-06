@@ -1,7 +1,8 @@
-# Mokthari Youssef El-Moukhtar 2018 @SUTD
+# -*- coding: utf-8 -*-
+# Copyright (c) 2018 Mokhtari Youssef El-Moukhtar @SUTD
 #
-# This script uses scapy to extract payload from a packet and convert to Binary
-# To test biggas 
+# This script accesses the packet payload and modifies it when set up as a MITM using Kali
+#
 
 from scapy.all import *
 import dpkt
@@ -38,7 +39,7 @@ def hexdump1(x, dump=False):
 while (True):
     pkt = pkts.read_packet()
     # '172.16.1.11'
-    if pkt is None or count > 5:
+    if pkt is None or count > 16:
                 # This means
         break
     else:
@@ -49,7 +50,7 @@ while (True):
             pkt.show()
             hexadecimal = hexdump1(pkt[Raw])
             list(hexadecimal)
-            print(hexadecimal[3]) # Can access an individual element from a list
+            print("Testing the list: ", hexadecimal[3]) # Can access an individual element from a list
 
 
             # Here create a list for this packet, by taking each num as an item
